@@ -1,0 +1,19 @@
+main {
+    text-align: center;
+}
+h1 {
+    font-size: 50px;
+}
+p {
+    font-size: 30px;
+    margin: 0 250px 0 250px;
+}
+button {
+    background-color: #201f58;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 25px;
+    padding: 20px 40px;
+    margin-top: 50px;
+}
