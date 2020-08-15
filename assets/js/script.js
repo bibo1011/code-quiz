@@ -22,31 +22,31 @@ var questions = [
         correct: "A"
     },{ 
         question: "Which statement correctly stores data into the Web Storage API?",
-        choiceA: "localStorage.getItem('lunch', 'sandwich')",
-        choiceB: "localStorage.setItem('lunch', 'sandwich')",
-        choiceC: "getItem.localStorage'lunch', 'sandwich')",
-        choiceD: "setItem.localStorage('lunch', 'sandwich')",
+        choiceA: "localStorage.getItem ( ' lunch ' , ' sandwich ' ) ",
+        choiceB: "localStorage.setItem ( ' lunch ' , ' sandwich ' ) ",
+        choiceC: "getItem.localStorage ( ' lunch ' , ' sandwich ' ) ",
+        choiceD: "setItem.localStorage ( ' lunch ' , ' sandwich ' ) ",
         correct: "B"
     },{
         question: "How do you leave hidden comments in HTML code?",
-        choiceA: "/* */",
+        choiceA: " / *  * / ",
         choiceB: "<!-- -->",
-        choiceC: "{{ }}",
-        choiceD: "//",
+        choiceC: " { {  } } ",
+        choiceD: " /  /",
         correct: "B"
     },{
         question: "Which of these values is NOT considered false",
         choiceA: "0",
-        choiceB: "'0'",
+        choiceB: " ' 0 ' ",
         choiceC: "null",
         choiceD: "''",
         correct: "B"
     },{
         question: "What are the CLI commands for Creating a new directory?",
-        choiceA: "mkdir <directory name>",
-        choiceB: "cd <directory name>",
-        choiceC: "touch <file name>",
-        choiceD: "rm <file name>",
+        choiceA: "mkdir < directory name > ",
+        choiceB: "cd < directory name > ",
+        choiceC: "touch < file name > ",
+        choiceD: "rm < file name > ",
         correct: "A"
     }
 ]
@@ -137,11 +137,34 @@ function renderQuestion(){
     choiceD.style.fontSize = "25px"
 }
 
-// function renderProgress(){
-//     for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
-//         progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
-//     }
-// }
+function checkAnswer(answer){
+    if( answer == questions[runningQuestion].correct){
+        // answer is correct
+        answerIsCorrect();
+    }else{
+        // answer is wrong
+        answerIsWrong();
+    }
+    count = 0;
+    if(runningQuestion < lastQuestion){
+        runningQuestion++;
+        renderQuestion();
+    }else{
+        // end the quiz and show the score
+        clearInterval(TIMER);
+        scoreRender();
+    }
+}
+
+// answer is correct
+function answerIsCorrect(){
+    result.innerHTML = "Correct!";
+}
+
+// answer is Wrong
+function answerIsWrong(){
+    result.innerHTML = "Wrong!";
+}
 
 function startQuiz(){
     start.style.display = "none";
@@ -151,6 +174,13 @@ function startQuiz(){
     // renderCounter();
     // TIMER = setInterval(renderCounter,1000);
 }
+
+function renderProgress(){
+    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
+        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+    }
+}
+
     
 homeDisplay();
 
@@ -190,3 +220,5 @@ function countdown() {
     
 }
 startButton.onclick = countdown
+
+
