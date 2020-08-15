@@ -14,11 +14,11 @@ var home = document.getElementById('home');
 // create questions
 var questions = [
     { 
-        question: "What is the correct syntax to close the <title> element?",
-        choiceA: "</title>",
-        choiceB: "<!tittle>",
-        choiceC: "<?title>",
-        choiceD: "<endtitle>",
+        question: "What is the correct syntax to close the < title > element?",
+        choiceA: "< / title >",
+        choiceB: "< ! tittle >",
+        choiceC: "< ? title >",
+        choiceD: "< endtitle >",
         correct: "A"
     },{ 
         question: "Which statement correctly stores data into the Web Storage API?",
@@ -76,11 +76,65 @@ function homeDisplay(){
 function renderQuestion(){
     let q = questions[runningQuestion];
         
-    question.innerHTML = "<p>"+ q.question +"</p>";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
-    choiceD.innerHTML = q.choiceD;
+    question.innerHTML = q.question;  
+    question.style.fontSize = "40px";
+    question.style.fontWeight = "bold"
+    question.style.margin = "50px 350px 10px 350px"
+    
+    choiceA.innerHTML = q.choiceA;    
+    choiceA.style.display = "inline-block"    
+    choiceA.style.padding = "20px 40px"    
+    choiceA.style.backgroundColor = "#201f58"    
+    choiceA.style.textAlign = "center"    
+    choiceA.style.width = "135px"    
+    choiceA.style.border = "1px solid grey"    
+    choiceA.style.borderRadius = "10px"    
+    choiceA.style.cursor = "pointer"    
+    choiceA.style.margin= "20px"    
+    choiceA.style.color = "#fff"
+    choiceA.style.fontSize = "25px"
+
+    choiceB.innerHTML = q.choiceB;   
+    choiceB.innerHTML = q.choiceB;    
+    choiceB.style.display = "inline-block"    
+    choiceB.style.padding = "20px 40px"    
+    choiceB.style.backgroundColor = "#201f58"    
+    choiceB.style.textAlign = "center"    
+    choiceB.style.width = "135px"    
+    choiceB.style.border = "1px solid grey"    
+    choiceB.style.borderRadius = "10px"    
+    choiceB.style.cursor = "pointer"    
+    choiceB.style.margin= "20px"    
+    choiceB.style.color = "#fff"
+    choiceB.style.fontSize = "25px"
+
+    choiceC.innerHTML = q.choiceC;   
+    choiceC.innerHTML = q.choiceC;    
+    choiceC.style.display = "inline-block"    
+    choiceC.style.padding = "20px 40px"    
+    choiceC.style.backgroundColor = "#201f58"    
+    choiceC.style.textAlign = "center"    
+    choiceC.style.width = "135px"    
+    choiceC.style.border = "1px solid grey"    
+    choiceC.style.borderRadius = "10px"    
+    choiceC.style.cursor = "pointer"    
+    choiceC.style.margin = "20px"    
+    choiceC.style.color = "#fff"
+    choiceC.style.fontSize = "25px"
+
+    choiceD.innerHTML = q.choiceD;   
+    choiceD.innerHTML = q.choiceD;    
+    choiceD.style.display = "inline-block"    
+    choiceD.style.padding = "20px 40px"    
+    choiceD.style.backgroundColor = "#201f58"    
+    choiceD.style.textAlign = "center"    
+    choiceD.style.width = "135px"    
+    choiceD.style.border = "1px solid grey"    
+    choiceD.style.borderRadius = "10px"    
+    choiceD.style.cursor = "pointer"    
+    choiceD.style.margin = "20px"    
+    choiceD.style.color = "#fff"
+    choiceD.style.fontSize = "25px"
 }
 
 // function renderProgress(){

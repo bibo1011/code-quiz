@@ -21,14 +21,19 @@ button {
     padding: 20px 40px;
     margin-top: 50px;
 }
-/* #choices{
+
+#choices{
     width : 480px;
-    position: absolute;
+    position: relative;
     right : 0;
     top : 125px;
-    padding : 10px
+    padding : 10px;
+    margin-left: 350px;
+    margin-bottom: 20px;
+    text-align: left;
+    
 }
-.choice{
+/* .choice{
     display: inline-block;
     width : 135px;
     text-align: center;
@@ -36,10 +41,13 @@ button {
     border-radius: 5px;
     cursor: pointer;
     padding : 5px;
-}
+} */
 .choice:hover{
     border : 2px solid grey;
     font-weight: bold;
-} */
+}
+#question {
+    text-align: center;
+}
 
 
