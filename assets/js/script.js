@@ -30,7 +30,7 @@ var questions = [
     },{
         question: "How do you leave hidden comments in HTML code?",
         choiceA: " / *  * / ",
-        choiceB: "<!-- -->",
+        choiceB: " < ! - -  - - > ",
         choiceC: " { {  } } ",
         choiceD: " /  /",
         correct: "B"
@@ -166,6 +166,10 @@ function answerIsWrong(){
     result.innerHTML = "Wrong!";
 }
 
+result.style.fontSize = "30px"
+result.style.textAlign = "center"
+result.style.borderTop = "1px solid grey"
+
 function startQuiz(){
     start.style.display = "none";
     renderQuestion();
@@ -175,11 +179,11 @@ function startQuiz(){
     // TIMER = setInterval(renderCounter,1000);
 }
 
-function renderProgress(){
-    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
-        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
-    }
-}
+// function renderProgress(){
+//     for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
+//         progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+//     }
+// }
 
     
 homeDisplay();
