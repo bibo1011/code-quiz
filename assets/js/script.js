@@ -10,6 +10,7 @@ var choiceD = document.getElementById("D");
 var title = document.getElementById("title");
 var instruction = document.getElementById("instruction");
 var home = document.getElementById('home');
+var score = document.getElementById('score')
 
 // create questions
 var questions = [
@@ -135,6 +136,8 @@ function renderQuestion(){
     choiceD.style.margin = "20px"    
     choiceD.style.color = "#fff"
     choiceD.style.fontSize = "25px"
+
+
 }
 
 function checkAnswer(answer){
@@ -159,6 +162,10 @@ function checkAnswer(answer){
 // answer is correct
 function answerIsCorrect(){
     result.innerHTML = "Correct!";
+    result.style.fontSize = "30px"
+    result.style.textAlign = "center"
+    result.style.borderTop = "1px solid grey"
+    result.style.margin = "0 350px 0 350px"
 }
 
 // answer is Wrong
@@ -166,13 +173,18 @@ function answerIsWrong(){
     result.innerHTML = "Wrong!";
 }
 
-result.style.fontSize = "30px"
-result.style.textAlign = "center"
-result.style.borderTop = "1px solid grey"
+function finalScore(){
+    score.style.display = "none"
+    score.innerHTML = "All done!"
+}
+
 
 function startQuiz(){
     start.style.display = "none";
     renderQuestion();
+  
+    
+    
     // quiz.style.display = "block";
     // renderProgress();
     // renderCounter();
@@ -212,9 +224,10 @@ function countdown() {
 
     startQuiz();
     
-    
     renderQuestion();
     // renderProgress();
+    
+
 
     
 
