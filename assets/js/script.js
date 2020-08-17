@@ -11,6 +11,7 @@ var title = document.getElementById("title");
 var instruction = document.getElementById("instruction");
 var home = document.getElementById('home');
 var score = document.getElementById('score')
+var choice = document.querySelector('choice')
 
 // create questions
 var questions = [
@@ -51,6 +52,7 @@ var questions = [
         correct: "A"
     }
 ]
+
 // for (var i = 0; i < questions.length; i++){
 //     console.log(questions[i].question);
 
@@ -154,7 +156,7 @@ function checkAnswer(answer){
         renderQuestion();
     }else{
         // end the quiz and show the score
-        clearInterval(TIMER);
+        clearInterval(timeInterval);
         scoreRender();
     }
 }
@@ -182,6 +184,7 @@ function finalScore(){
 function startQuiz(){
     start.style.display = "none";
     renderQuestion();
+    
   
     
     
@@ -236,6 +239,7 @@ function countdown() {
         
     
 }
-startButton.onclick = countdown
+
+startButton.onclick = countdown;
 
 
