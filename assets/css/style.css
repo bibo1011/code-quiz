@@ -21,6 +21,10 @@ button {
     margin-top: 50px;
 }
 
+button:hover{
+    background-color: blueviolet;
+}
+
 #choices{
     width : 480px;
     position: relative;
@@ -32,6 +36,7 @@ button {
     text-align: left;
     
 }
+
 /* .choice{
     display: inline-block;
     width : 135px;
@@ -44,7 +49,10 @@ button {
 .choice:hover{
     border : 2px solid grey;
     font-weight: bold;
+    background-color: blueviolet!important;
+    
 }
+
 #question {
     text-align: center;
 }
