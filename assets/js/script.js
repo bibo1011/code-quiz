@@ -12,6 +12,7 @@ var instruction = document.getElementById("instruction");
 var home = document.getElementById('home');
 var score = document.getElementById('score')
 
+
 // create questions
 var questions = [
     { 
@@ -137,7 +138,6 @@ function renderQuestion(){
     choiceD.style.color = "#fff"
     choiceD.style.fontSize = "25px"
 
-
 }
 
 function checkAnswer(answer){
@@ -154,8 +154,8 @@ function checkAnswer(answer){
         renderQuestion();
     }else{
         // end the quiz and show the score
-        clearInterval(TIMER);
-        scoreRender();
+        clearInterval(timeInterval);
+        finalScore();
     }
 }
 
@@ -173,8 +173,10 @@ function answerIsWrong(){
     result.innerHTML = "Wrong!";
 }
 
+
+
 function finalScore(){
-    score.style.display = "none"
+    clearInterval(timeInterval);
     score.innerHTML = "All done!"
 }
 
@@ -182,20 +184,11 @@ function finalScore(){
 function startQuiz(){
     start.style.display = "none";
     renderQuestion();
-  
     
-    
-    // quiz.style.display = "block";
-    // renderProgress();
-    // renderCounter();
-    // TIMER = setInterval(renderCounter,1000);
+
 }
 
-// function renderProgress(){
-//     for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
-//         progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
-//     }
-// }
+
 
     
 homeDisplay();
@@ -224,16 +217,10 @@ function countdown() {
 
     startQuiz();
     
-    renderQuestion();
-    // renderProgress();
+    
+    
     
 
-
-    
-
-    
-        
-        
     
 }
 startButton.onclick = countdown
